@@ -31,6 +31,21 @@ def get_world_bank_cpi(country_codes):
             cpi_results[code] = {"value": "N/A", "year": "N/A"}
     return cpi_results
 
+def get_next_fed_meeting():
+    """计算下一个美联储议息会议日期 (2026年示例)"""
+    # 2026年美联储议息会议日期 (根据官方公布日期)
+    meetings = [
+        "2026-01-28", "2026-03-18", "2026-05-06", "2026-06-17",
+        "2026-07-29", "2026-09-16", "2026-11-04", "2026-12-16"
+    ]
+    now = datetime.datetime.now()
+    future_meetings = [datetime.datetime.strptime(m, "%Y-%m-%d") for m in meetings if datetime.datetime.strptime(m, "%Y-%m-%d") > now]
+    
+    if future_meetings:
+        next_m = future_meetings[0]
+        return next_m.strftime("%Y-%m-%d")
+    return "TBD"
+
 def main():
     # 1. 定义要追踪的国家 (ISO 代码)
     # 美国(USA), 中国(CHN), 日本(JPN), 英国(GBR), 德国(DEU), 印度(IND), 巴西(BRA)
@@ -41,7 +56,8 @@ def main():
     final_data = {
         "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "crypto_fng": get_crypto_fng(),
-        "inflation_rates": get_world_bank_cpi(countries)
+        "inflation_rates": get_world_bank_cpi(countries),
+        "next_fed_meeting": get_next_fed_meeting()
     }
 
     # 2. 计算“宏观红绿灯”简单逻辑 (示例: 以美国CPI和Crypto情绪为基准)
