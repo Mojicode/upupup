@@ -1,0 +1,38 @@
+{
+    "last_updated": "2026-03-08 22:40:25",
+    "crypto_fng": {
+        "value": "12",
+        "classification": "Extreme Fear"
+    },
+    "inflation_rates": {
+        "USA": {
+            "value": "N/A",
+            "year": "2025"
+        },
+        "CHN": {
+            "value": "N/A",
+            "year": "2025"
+        },
+        "JPN": {
+            "value": "N/A",
+            "year": "2025"
+        },
+        "GBR": {
+            "value": "N/A",
+            "year": "2025"
+        },
+        "DEU": {
+            "value": "N/A",
+            "year": "2025"
+        },
+        "IND": {
+            "value": "N/A",
+            "year": "2025"
+        },
+        "BRA": {
+            "value": "N/A",
+            "year": "2025"
+        }
+    },
+    "macro_light": 2
+}

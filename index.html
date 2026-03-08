@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宏观经济驾驶舱</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white p-8">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-3xl font-bold mb-2">宏观经济驾驶舱</h1>
+        <p class="text-gray-400 mb-8 text-sm">数据更新时间: <span id="update-time">--</span></p>
+
+        <div class="bg-gray-800 p-6 rounded-xl mb-6 flex items-center justify-between border border-gray-700">
+            <div>
+                <h2 class="text-xl font-semibold">宏观红绿灯状态</h2>
+                <p id="light-desc" class="text-gray-400 text-sm mt-1">基于 CPI 与情绪加权计算</p>
+            </div>
+            <div id="light-circle" class="w-12 h-12 rounded-full bg-gray-600 shadow-lg"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                <h3 class="text-gray-400 text-xs uppercase tracking-wider mb-2">加密货币恐慌/贪婪指数</h3>
+                <p id="fng-value" class="text-3xl font-bold">--</p>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 col-span-1 md:col-span-2">
+                <h3 class="text-gray-400 text-xs uppercase tracking-wider mb-4">各国通胀率 (CPI %)</h3>
+                <div id="cpi-list" class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-sm">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadData() {
+            try {
+                const response = await fetch('./data.json');
+                const data = await response.json();
+                
+                // 1. 更新时间
+                document.getElementById('update-time').innerText = data.last_updated;
+                
+                // 2. 加密指数
+                document.getElementById('fng-value').innerText = `${data.crypto_fng.value} / ${data.crypto_fng.classification}`;
+                
+                // 3. 渲染红绿灯
+                const lightMap = { 
+                    1: { color: 'bg-green-500 shadow-green-500/50', text: '当前环境：宜建仓/持有' }, 
+                    2: { color: 'bg-yellow-500 shadow-yellow-500/50', text: '当前环境：中性观察' }, 
+                    3: { color: 'bg-red-500 shadow-red-500/50', text: '当前环境：高风险预警' } 
+                };
+                const config = lightMap[data.macro_light] || { color: 'bg-gray-500', text: '状态未知' };
+                document.getElementById('light-circle').className = `w-12 h-12 rounded-full shadow-lg ${config.color}`;
+                document.getElementById('light-desc').innerText = config.text;
+
+                // 4. 渲染 CPI 列表
+                const cpiList = document.getElementById('cpi-list');
+                const countriesMap = {
+                    "USA": "美国", "CHN": "中国", "JPN": "日本", 
+                    "GBR": "英国", "DEU": "德国", "IND": "印度", "BRA": "巴西"
+                };
+                
+                Object.entries(data.inflation_rates).forEach(([code, info]) => {
+                    const div = document.createElement('div');
+                    div.className = "p-2 bg-gray-700/50 rounded";
+                    div.innerHTML = `<p class="text-gray-400 text-xs">${countriesMap[code] || code}</p>
+                                     <p class="text-lg font-mono">${info.value}%</p>`;
+                    cpiList.appendChild(div);
+                });
+
+            } catch (e) {
+                console.error("加载数据失败:", e);
+                document.getElementById('light-desc').innerText = "加载 JSON 数据出错，请确保已运行 python 脚本。";
+            }
+        }
+        loadData();
+    </script>
+</body>
+</html>
