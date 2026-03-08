@@ -15,20 +15,32 @@ def get_crypto_fng():
         return {"value": "N/A", "classification": "Error"}
 
 def get_world_bank_cpi(country_codes):
-    """从世界银行获取指定国家的最新 CPI (通胀率) 数据"""
+    """从世界银行获取指定国家的最新 CPI 数据，增加容错和调试日志"""
     cpi_results = {}
     for code in country_codes:
         try:
-            # FP.CPI.TOTL.ZG 是世界银行通胀率(年百分比)的指标代码
-            url = f"https://api.worldbank.org/v2/country/{code}/indicator/FP.CPI.TOTL.ZG?format=json&per_page=1"
-            response = requests.get(url)
+            # 修改点 1：增加 per_page=10，防止最新的年份数据缺失，我们往回找 2-3 年
+            url = f"https://api.worldbank.org/v2/country/{code}/indicator/FP.CPI.TOTL.ZG?format=json&per_page=10"
+            response = requests.get(url, timeout=10)
             data = response.json()
-            # 数据点在 data[1][0]
-            val = data[1][0]['value']
-            year = data[1][0]['date']
-            cpi_results[code] = {"value": round(val, 2) if val else "N/A", "year": year}
-        except:
-            cpi_results[code] = {"value": "N/A", "year": "N/A"}
+            
+            # 世界银行 API 结构: [ {元数据}, [ {数据点1}, {数据点2}... ] ]
+            if len(data) > 1 and data[1]:
+                # 寻找第一个非空的数值
+                latest_entry = next((item for item in data[1] if item['value'] is not None), None)
+                
+                if latest_entry:
+                    val = latest_entry['value']
+                    year = latest_entry['date']
+                    cpi_results[code] = {"value": round(val, 2), "year": year}
+                    print(f"成功获取 {code}: {val}% ({year})")
+                else:
+                    cpi_results[code] = {"value": "暂无数据", "year": "N/A"}
+            else:
+                cpi_results[code] = {"value": "接口错误", "year": "N/A"}
+        except Exception as e:
+            print(f"获取 {code} 失败: {e}")
+            cpi_results[code] = {"value": "请求失败", "year": "N/A"}
     return cpi_results
 
 def get_next_fed_meeting():
@@ -49,7 +61,7 @@ def get_next_fed_meeting():
 def main():
     # 1. 定义要追踪的国家 (ISO 代码)
     # 美国(USA), 中国(CHN), 日本(JPN), 英国(GBR), 德国(DEU), 印度(IND), 巴西(BRA)
-    countries = ["USA", "CHN", "JPN", "GBR", "DEU", "IND", "BRA"]
+    countries = ["USA", "CHN", "JPN", "GBR", "DEU", "IND", "BRA", "SGP"]
     
     print("正在获取数据...")
     

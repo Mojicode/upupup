@@ -1,39 +1,43 @@
 {
-    "last_updated": "2026-03-08 23:19:28",
+    "last_updated": "2026-03-08 23:40:47",
     "crypto_fng": {
         "value": "12",
         "classification": "Extreme Fear"
     },
     "inflation_rates": {
         "USA": {
-            "value": "N/A",
-            "year": "2025"
+            "value": 2.95,
+            "year": "2024"
         },
         "CHN": {
-            "value": "N/A",
-            "year": "2025"
+            "value": 0.22,
+            "year": "2024"
         },
         "JPN": {
-            "value": "N/A",
-            "year": "2025"
+            "value": 2.74,
+            "year": "2024"
         },
         "GBR": {
-            "value": "N/A",
-            "year": "2025"
+            "value": 3.27,
+            "year": "2024"
         },
         "DEU": {
-            "value": "N/A",
-            "year": "2025"
+            "value": 2.26,
+            "year": "2024"
         },
         "IND": {
-            "value": "N/A",
-            "year": "2025"
+            "value": 4.95,
+            "year": "2024"
         },
         "BRA": {
-            "value": "N/A",
-            "year": "2025"
+            "value": 4.37,
+            "year": "2024"
+        },
+        "SGP": {
+            "value": 2.39,
+            "year": "2024"
         }
     },
     "next_fed_meeting": "2026-03-18",
-    "macro_light": 2
+    "macro_light": 1
 }
