@@ -1,8 +1,8 @@
 {
-    "last_updated": "2026-04-26 01:23:01",
+    "last_updated": "2026-04-27 01:23:54",
     "crypto_fng": {
-        "value": "33",
-        "classification": "Fear"
+        "value": "47",
+        "classification": "Neutral"
     },
     "inflation_rates": {
         "USA": {
@@ -34,8 +34,8 @@
             "year": "2024"
         },
         "SGP": {
-            "value": 2.39,
-            "year": "2024"
+            "value": "请求失败",
+            "year": "N/A"
         }
     },
     "next_fed_meeting": "2026-05-06",
