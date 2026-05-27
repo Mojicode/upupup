@@ -1,8 +1,8 @@
 {
-    "last_updated": "2026-05-26 01:54:44",
+    "last_updated": "2026-05-27 02:03:05",
     "crypto_fng": {
-        "value": "34",
-        "classification": "Fear"
+        "value": "25",
+        "classification": "Extreme Fear"
     },
     "inflation_rates": {
         "USA": {
@@ -39,5 +39,5 @@
         }
     },
     "next_fed_meeting": "2026-06-17",
-    "macro_light": 2
+    "macro_light": 1
 }
