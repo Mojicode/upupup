@@ -1,43 +1,43 @@
 {
-    "last_updated": "2026-06-30 02:00:36",
+    "last_updated": "2026-07-01 02:06:19",
     "crypto_fng": {
-        "value": "15",
+        "value": "11",
         "classification": "Extreme Fear"
     },
     "inflation_rates": {
         "USA": {
-            "value": 2.95,
-            "year": "2024"
+            "value": "请求失败",
+            "year": "N/A"
         },
         "CHN": {
-            "value": 0.22,
-            "year": "2024"
+            "value": "请求失败",
+            "year": "N/A"
         },
         "JPN": {
-            "value": 2.74,
-            "year": "2024"
+            "value": "请求失败",
+            "year": "N/A"
         },
         "GBR": {
-            "value": 3.27,
-            "year": "2024"
+            "value": "请求失败",
+            "year": "N/A"
         },
         "DEU": {
-            "value": 2.26,
-            "year": "2024"
+            "value": "请求失败",
+            "year": "N/A"
         },
         "IND": {
-            "value": 4.95,
-            "year": "2024"
+            "value": "请求失败",
+            "year": "N/A"
         },
         "BRA": {
-            "value": 4.37,
-            "year": "2024"
+            "value": "请求失败",
+            "year": "N/A"
         },
         "SGP": {
-            "value": 2.39,
-            "year": "2024"
+            "value": "请求失败",
+            "year": "N/A"
         }
     },
     "next_fed_meeting": "2026-07-29",
-    "macro_light": 1
+    "macro_light": 2
 }
