@@ -1,7 +1,7 @@
 {
-    "last_updated": "2026-07-08 01:20:55",
+    "last_updated": "2026-07-09 01:28:45",
     "crypto_fng": {
-        "value": "20",
+        "value": "22",
         "classification": "Extreme Fear"
     },
     "inflation_rates": {
@@ -10,8 +10,8 @@
             "year": "2024"
         },
         "CHN": {
-            "value": "请求失败",
-            "year": "N/A"
+            "value": 0.06,
+            "year": "2025"
         },
         "JPN": {
             "value": 3.17,
