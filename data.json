@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-11 01:19:44",
+    "last_updated": "2026-07-12 01:21:40",
     "crypto_fng": {
         "value": "26",
         "classification": "Fear"
@@ -34,8 +34,8 @@
             "year": "2025"
         },
         "SGP": {
-            "value": "请求失败",
-            "year": "N/A"
+            "value": 0.9,
+            "year": "2025"
         }
     },
     "next_fed_meeting": "2026-07-29",
