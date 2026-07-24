@@ -1,7 +1,7 @@
 {
-    "last_updated": "2026-07-23 01:25:24",
+    "last_updated": "2026-07-24 01:21:32",
     "crypto_fng": {
-        "value": "31",
+        "value": "28",
         "classification": "Fear"
     },
     "inflation_rates": {
@@ -34,10 +34,10 @@
             "year": "2025"
         },
         "SGP": {
-            "value": "请求失败",
-            "year": "N/A"
+            "value": 0.9,
+            "year": "2025"
         }
     },
     "next_fed_meeting": "2026-07-29",
-    "macro_light": 2
+    "macro_light": 1
 }
