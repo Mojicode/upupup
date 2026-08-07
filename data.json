@@ -1,8 +1,8 @@
 {
-    "last_updated": "2026-08-06 01:15:30",
+    "last_updated": "2026-08-07 01:57:47",
     "crypto_fng": {
-        "value": "25",
-        "classification": "Extreme Fear"
+        "value": "29",
+        "classification": "Fear"
     },
     "inflation_rates": {
         "USA": {
@@ -22,8 +22,8 @@
             "year": "2025"
         },
         "DEU": {
-            "value": 2.17,
-            "year": "2025"
+            "value": "请求失败",
+            "year": "N/A"
         },
         "IND": {
             "value": 2.4,
@@ -34,8 +34,8 @@
             "year": "2025"
         },
         "SGP": {
-            "value": 0.9,
-            "year": "2025"
+            "value": "请求失败",
+            "year": "N/A"
         }
     },
     "next_fed_meeting": "2026-09-16",
