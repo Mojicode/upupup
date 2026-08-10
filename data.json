@@ -1,7 +1,7 @@
 {
-    "last_updated": "2026-08-09 00:42:49",
+    "last_updated": "2026-08-10 00:44:59",
     "crypto_fng": {
-        "value": "31",
+        "value": "30",
         "classification": "Fear"
     },
     "inflation_rates": {
@@ -22,8 +22,8 @@
             "year": "2025"
         },
         "DEU": {
-            "value": 2.17,
-            "year": "2025"
+            "value": "请求失败",
+            "year": "N/A"
         },
         "IND": {
             "value": 2.4,
