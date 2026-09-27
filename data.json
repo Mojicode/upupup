@@ -1,13 +1,13 @@
 {
-    "last_updated": "2026-09-26 02:13:33",
+    "last_updated": "2026-09-27 02:06:36",
     "crypto_fng": {
-        "value": "74",
+        "value": "70",
         "classification": "Greed"
     },
     "inflation_rates": {
         "USA": {
-            "value": "请求失败",
-            "year": "N/A"
+            "value": 2.95,
+            "year": "2024"
         },
         "CHN": {
             "value": 0.06,
