@@ -1,7 +1,7 @@
 {
-    "last_updated": "2026-10-08 03:12:59",
+    "last_updated": "2026-10-09 03:19:04",
     "crypto_fng": {
-        "value": "64",
+        "value": "59",
         "classification": "Greed"
     },
     "inflation_rates": {
@@ -26,8 +26,8 @@
             "year": "2025"
         },
         "IND": {
-            "value": "请求失败",
-            "year": "N/A"
+            "value": 2.4,
+            "year": "2025"
         },
         "BRA": {
             "value": 5.02,
