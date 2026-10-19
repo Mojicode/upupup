@@ -1,8 +1,8 @@
 {
-    "last_updated": "2026-10-18 01:45:56",
+    "last_updated": "2026-10-19 02:02:54",
     "crypto_fng": {
-        "value": "53",
-        "classification": "Neutral"
+        "value": "59",
+        "classification": "Greed"
     },
     "inflation_rates": {
         "USA": {
@@ -26,8 +26,8 @@
             "year": "2025"
         },
         "IND": {
-            "value": 2.4,
-            "year": "2025"
+            "value": "请求失败",
+            "year": "N/A"
         },
         "BRA": {
             "value": 5.02,
